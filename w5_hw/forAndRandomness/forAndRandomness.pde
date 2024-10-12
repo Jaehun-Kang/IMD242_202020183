@@ -5,6 +5,7 @@ int maxTile = 16;
 
 void setup() {
   size(800, 800);
+  rectMode(CENTER);
 }
 
 void draw() {
@@ -23,9 +24,9 @@ void draw() {
       float rectY = tileSize * row;
       float centerX = rectX + tileSize * 0.5;
       float centerY = rectY + tileSize * 0.5;
-      //float noiseVal = noise(centerX * noiseMult, centerY * noiseMult);
-      float lineMove = frameCount * noiseMult * 5;
+      float lineMove = frameCount * noiseMult * noiseMult * 3000;
       float noiseVal = noise(centerX * noiseMult, centerY * noiseMult, lineMove);
+      
       fill(0);
       stroke(255);
       strokeWeight(1);
@@ -37,7 +38,10 @@ void draw() {
       rotate(radians(360 * noiseVal));
       stroke(255, 0, 0);
       strokeWeight(2);
-      line(0, 0, tileSize * 0.85 * 0.5, 0);
+      line(0, 0, -tileSize * 0.85 * 0.5, 0);
+      fill(255, 0, 0);
+      rect(-tileSize * 0.85 * 0.5, 0, tileSize * 0.15 * 0.5 * 1.21, tileSize * 0.15 * 2.35);
+      arc(0, 0, tileSize, tileSize, PI + radians(-18), PI + radians(18), CHORD);
       popMatrix();
     }
   }
