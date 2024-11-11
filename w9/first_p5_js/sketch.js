@@ -3,6 +3,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(220, 0);
+  fill('red');
   circle(mouseX, mouseY, 100);
 }
