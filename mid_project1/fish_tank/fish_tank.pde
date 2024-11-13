@@ -20,7 +20,7 @@ void mousePressed() {
 void keyPressed() { //Processing.org/Reference/keyCode.html 참고
   if (key == CODED) {
     if (keyCode == UP) {
-      fish.add(new Fish(width * .5, height * .5, 0)); //물고기 추가
+      fish.add(new Fish(width * random(.2, .8), height * random(.2, .8), 0)); //물고기 추가
     }
     if (keyCode == DOWN && fish.size() > 0) { //물고기 없을 때 실행 안됨
       fish.remove(fish.size() - 1); //물고기 삭제

@@ -1,16 +1,16 @@
 class Food {
   float[] pos;
-  float r; //반지름
+  float rad; //반지름
 
-  Food(float foodX, float foodY, float r) {
+  Food(float foodX, float foodY, float rad) {
     pos = new float[2];
-    init(foodX, foodY, r);
+    init(foodX, foodY, rad);
   }
 
-  void init(float foodX, float foodY, float r) {
+  void init(float foodX, float foodY, float rad) {
     pos[0] = foodX;
     pos[1] = foodY;
-    this.r = r;
+    this.rad = rad;
   }
 
   void update(float[] gravity) {
@@ -26,7 +26,7 @@ class Food {
     translate(pos[0], pos[1]);
     noStroke();
     fill(150, 100, 55);
-    circle(0, 0, 2 * r);
+    circle(0, 0, 2 * rad);
     pop();
   }
 }
