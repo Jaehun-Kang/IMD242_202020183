@@ -5,7 +5,7 @@ function setup() {
   capture = createCapture(VIDEO);
   console.log(capture);
   capture.size(200, 200);
-  capture.hide;
+  capture.hide();
 }
 
 function draw() {
